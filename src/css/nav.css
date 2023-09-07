@@ -1,0 +1,16 @@
+#nav-container{
+    background-color:rgba(38, 167, 38, 0.644) ;
+   
+}
+.logo-img{
+    display: flex;
+    
+    background-image: url("../assets/logo-removebg-preview.png") ;
+    background-repeat: no-repeat;
+    height:7vh;
+    width: 7vw;
+  
+    
+    
+    background-size: contain;
+}
