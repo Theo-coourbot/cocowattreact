@@ -7,6 +7,9 @@ import SignIn from "./routes/SignIn"
 import SignUp from "./routes/SigntUp"
 import CreateTrip from "./routes/CreateTrip"
 import Home from "./routes/Home"
+import ProfileDetails from "./routes/profile-details"
+import DetailsTrip from "./routes/Detail-trip"
+import FormAddCar from "./routes/Form-add-car"
 
 
 
@@ -38,7 +41,20 @@ const router = createBrowserRouter([
         {
           path: "/inscription",
           element: <SignUp />
-        }
+        },
+        {
+          path: "/trip/detail",
+          element: <DetailsTrip />
+        },
+        {
+          path: "/profil/detail",
+          element: <ProfileDetails />
+        },
+        {
+          path: "/car/add",
+          element: <FormAddCar />
+        },
+        
        
       
       

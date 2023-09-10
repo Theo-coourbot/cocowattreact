@@ -1,4 +1,5 @@
 
+import Card from "../componant/Card"
 import InputSearch from "../componant/InputSearch"
 import NavBar from "../componant/NavBar"
 import "../css/home.css"
@@ -10,7 +11,8 @@ const ResultTrip = () => {
       
       <NavBar/>
       
-      <h1>ResultTrip</h1>
+      <Card startingPoint={"Lille"} date={"10/06/2000"} remaningPlace={"1"} endPoint={"Paris"} note={"2"} />
+      <Card startingPoint={"Lille"} date={"20/12/2010"} remaningPlace={"0"} endPoint={"Paris"} note={"2"} />
       
       </>
     )

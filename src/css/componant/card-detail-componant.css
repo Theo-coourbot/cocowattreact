@@ -1,0 +1,56 @@
+.star-img{
+    
+    background-image: url("../../assets/star-removebg-preview.png") ;
+    background-repeat: no-repeat;
+    height:5vh;
+    width: 5vw;
+    
+  
+    
+    
+    background-size: contain;
+
+}
+.line-bg{
+    background-color: black;
+    height: 100%;
+    padding: 1rem;
+}
+
+.img-profile{
+    background-image: url("../../assets/profile-removebg-preview.png") ;
+    background-repeat: no-repeat;
+    height:15vh;
+    width: 15vw;
+    
+  
+    
+    
+    background-size: contain;
+}
+.profile{
+    background-image: url("../../assets/profile-removebg-preview.png") ;
+    background-repeat: no-repeat;
+    height:10vh;
+    width: 10vw;
+    
+  
+    
+    
+    background-size: contain;
+
+}
+
+.ecologo{
+    
+    background-image: url("../../assets/ecolo-removebg-preview.png") ;
+    background-repeat: no-repeat;
+    height:5vh;
+    width: 5vw;
+    
+  
+    
+    
+    background-size: contain;
+
+}

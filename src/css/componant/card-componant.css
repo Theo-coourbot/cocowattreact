@@ -1,0 +1,47 @@
+.img-profile{
+    background-image: url("../../assets/profile-removebg-preview.png") ;
+    background-repeat: no-repeat;
+    height:5vh;
+    width: 5vw;
+    
+  
+    
+    
+    background-size: contain;
+}
+.star-img{
+    
+    background-image: url("../../assets/star-removebg-preview.png") ;
+    background-repeat: no-repeat;
+    height:5vh;
+    width: 5vw;
+    
+  
+    
+    
+    background-size: contain;
+
+}
+
+.is-complete{
+    background-color: rgb(186, 186, 186);
+    border-radius: 2%;
+    -webkit-border-radius: 2%;
+    -moz-border-radius: 2%;
+    -ms-border-radius: 2%;
+    -o-border-radius: 2%;
+}
+
+.ecologo{
+    
+    background-image: url("../../assets/ecolo-removebg-preview.png") ;
+    background-repeat: no-repeat;
+    height:5vh;
+    width: 5vw;
+    
+  
+    
+    
+    background-size: contain;
+
+}
