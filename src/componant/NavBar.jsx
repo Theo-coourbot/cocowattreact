@@ -24,14 +24,10 @@ return (
 
         <Link class="nav-link fs-4 " to={`/connexion`}>sign In</Link>
         <Link class="nav-link fs-4  " to={`/inscription`} >sign Up</Link> 
-        
-        
+         
       </div>
     </div>
-
   </div>
-
-
 </nav>
      
   
