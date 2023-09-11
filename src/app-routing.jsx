@@ -10,6 +10,9 @@ import Home from "./routes/Home"
 import ProfileDetails from "./routes/profile-details"
 import DetailsTrip from "./routes/Detail-trip"
 import FormAddCar from "./routes/Form-add-car"
+import DetailCar from "./routes/Detail-car"
+import ShowComment from "./routes/Show-comment"
+import AddComment from "./routes/Add-comment"
 
 
 
@@ -53,6 +56,18 @@ const router = createBrowserRouter([
         {
           path: "/car/add",
           element: <FormAddCar />
+        },
+        {
+          path: "/car/details",
+          element: <DetailCar />
+        },
+        {
+          path: "/profil/comment",
+          element: <ShowComment />
+        },
+        {
+          path: "/profil/comment/add",
+          element: <AddComment />
         },
         
        

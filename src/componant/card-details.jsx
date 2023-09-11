@@ -150,6 +150,127 @@ function CardDetails(props){
  
          </>
     )
+   } else if(props.mode === "car") {
+    return (
+        <>
+        
+        <div className="container bg-light rounded mt-5 p-3">
+            
+                 <div className="row mb-4">
+                     <div className="col">
+                         <h2>{props.brand}</h2>
+                         <p>{props.model}</p>
+                         
+                         {props.isElectrique ?
+                          <p>Voiture éléctrique</p>
+                          :
+                          <p>Voiture non éléctrique</p>
+                          }
+
+                          <p>{props.avalidePlace} place disponible</p>
+                     </div>
+                     <div className="col">
+                        <div className="d-flex justify-content-end">
+
+                            <div className="img-profile"></div>
+                        </div>
+
+                     </div>
+                    
+                 </div>
+                 <div className="row">
+                    <div className="col">
+                        <div className="mb-4">
+                            <button class="btn btn-primary" type="submit">Changer de véhicule</button>
+                        </div>
+                        <div className="mb-4">
+
+                            <button class="btn btn-primary" type="submit">retirer le véhicule</button>
+                        </div>
+
+                    </div>
+                 </div>
+            
+        </div>
+       
+ 
+         </>
+       
+       
+        )
+
+
+   } else if(props.mode === "comment") {
+    return ( 
+        
+        <>
+        <div className="container bg-light rounded mt-5 p-3">
+            
+            <div className="row mb-4">
+                <div className="col">
+                    <h2>{props.name}</h2>
+                    <p>{props.age} ans</p>
+                </div>
+                <div className="col">
+                    <div className="d-flex justify-content-end">
+
+                    <div className="img-profile"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="my-2 bg-secondary rounded">
+                <p className="p-1">coucou</p>
+
+
+            </div>
+       
+   </div>
+        
+        </>
+    )
+        
+   }
+   else if(props.mode === "addComment") {
+    return ( 
+        
+        <>
+        
+        <div className="container bg-light rounded mt-5 p-3">
+            
+                 <div className="row mb-4">
+                     <div className="col">
+                         <h2>{props.name}</h2>
+                         <p>{props.age} ans</p>
+                         <div className="d-flex">
+                             <div className="star-img"></div>
+                             <p>{props.averageNote}/5</p>
+                             <p>{props.countNote} avis</p>
+                         </div>
+                     </div>
+                     <div className="col">
+                         <div className="d-flex justify-content-end">
+ 
+                         <div className="img-profile"></div>
+                         </div>
+                     </div>
+                 </div>
+ 
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Ajouter un commentaire</label>
+                </div>
+ 
+                 </div>
+ 
+                
+ 
+       
+       
+ 
+         </>
+    )
+        
    }
    
     }

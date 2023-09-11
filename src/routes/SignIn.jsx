@@ -3,9 +3,20 @@ import BtnForm from "../componant/BtnForm"
 import Input from "../componant/Input"
 import "../css/home.css"
 import NavBar from "../componant/NavBar"
+import { useState } from "react"
 
 
 const SignIn = () => {
+
+  const [id,setId] = useState("")
+  const [mail,setMail] = useState("")
+  const [password,setPassword] = useState("")
+
+  const signIn = (e) => {
+    e.preventDefault()
+  }
+ 
+
     return (
       <>
       
@@ -16,7 +27,7 @@ const SignIn = () => {
       </div>
       <div className="container text-center">
 
-      <form className="mt-5">
+      <form className="mt-5" onSubmit={signIn}>
   <div class="mb-5 ">
     <Input name={"E-mail"}/>
   </div>
