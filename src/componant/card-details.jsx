@@ -1,6 +1,10 @@
+import { Link, useNavigate } from "react-router-dom"
 import "../css/componant/card-detail-componant.css"
 
 function CardDetails(props){
+    const navigate = useNavigate();
+
+
 
 
    if(props.mode === "profile")
@@ -41,17 +45,17 @@ function CardDetails(props){
                      <div className="col">
                          <div className="mb-3">
  
-                     <button class="btn btn-primary" type="submit">Button</button>
+                     <Link class="btn btn-primary" to={"/profil/comment"}  type="submit">voir mes avis</Link>
                          </div>
-                     <button class="btn btn-primary" type="submit">Button</button>
+                     <Link class="btn btn-primary" to={"/trip/result"} type="submit">voir mes trajets</Link>
  
                      </div>
                      <div className="col">
                          <div className="mb-3 d-flex justify-content-end">
-                             <button class="btn btn-primary" type="submit">Button</button>
+                             <Link class="btn btn-primary" to={"/inscription"} type="submit">modifier profile</Link>
                          </div>
                          <div className="d-flex justify-content-end">
-                             <button class="btn btn-primary" type="submit">Button</button>
+                             <Link class="btn btn-primary" to={"/car/detail"} type="submit">info voiture</Link>
                          </div>
  
                      </div>
@@ -143,7 +147,7 @@ function CardDetails(props){
                     </div>
                     
             <div className="text-center mt-5 mb-2">
-            <button class="btn btn-primary" type="submit">Button</button>
+            <button class="btn btn-primary" type="submit">Je reserve</button>
             </div>
         </div>
        
@@ -181,7 +185,7 @@ function CardDetails(props){
                  <div className="row">
                     <div className="col">
                         <div className="mb-4">
-                            <button class="btn btn-primary" type="submit">Changer de véhicule</button>
+                            <Link class="btn btn-primary" type="submit" to={"/car/add"}>Changer de véhicule</Link>
                         </div>
                         <div className="mb-4">
 
@@ -259,6 +263,7 @@ function CardDetails(props){
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                     <label for="floatingTextarea">Ajouter un commentaire</label>
+                    <button class="btn btn-primary" type="submit"> valider</button>
                 </div>
  
                  </div>

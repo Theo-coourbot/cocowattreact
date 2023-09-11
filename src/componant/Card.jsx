@@ -1,12 +1,20 @@
+import { Link, useNavigate } from "react-router-dom"
 import "../css/componant/card-componant.css"
 
 
 
+
+
 function Card(props){
+    const navigate = useNavigate();
+    const showDetailtrip = () =>{
+        navigate("/trip/detail")
+    
+    } 
 return (
 
-   
-    <div className={props.remaningPlace == 0 ? "is-complete mt-5 mx-5 p-1" : "card  mt-5 mx-5 p-1" }>
+//    <Link to={"/trip/detail"} className="text-decoration-none">
+    <div onClick={(e)=>showDetailtrip(e)} className={props.remaningPlace == 0 ? "is-complete mt-5 mx-5 p-1" : "card  mt-5 mx-5 p-1" }>
 
         <div className="row">
             <div className="col">
@@ -56,6 +64,7 @@ return (
 
         </div>
         </div>
+        // </Link>
     
 
     

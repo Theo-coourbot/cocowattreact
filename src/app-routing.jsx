@@ -2,17 +2,17 @@ import { createBrowserRouter } from "react-router-dom"
 import App from './App'
 import ErrorPage from "./routes/ErrorPage"
 
-import ResultTrip from "./routes/ResultSearchTrip"
-import SignIn from "./routes/SignIn"
-import SignUp from "./routes/SigntUp"
-import CreateTrip from "./routes/CreateTrip"
+import ResultTrip from "./routes/trip/ResultSearchTrip"
+import SignIn from "./routes/auth/SignIn"
+import SignUp from "./routes/auth/SigntUp"
+import CreateTrip from "./routes/trip/CreateTrip"
 import Home from "./routes/Home"
 import ProfileDetails from "./routes/profile-details"
-import DetailsTrip from "./routes/Detail-trip"
-import FormAddCar from "./routes/Form-add-car"
-import DetailCar from "./routes/Detail-car"
-import ShowComment from "./routes/Show-comment"
-import AddComment from "./routes/Add-comment"
+import DetailsTrip from "./routes/trip/Detail-trip"
+import FormAddCar from "./routes/car/Form-add-car"
+import DetailCar from "./routes/car/Detail-car"
+import ShowComment from "./routes/comment/Show-comment"
+import AddComment from "./routes/comment/Add-comment"
 
 
 
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
           element: <FormAddCar />
         },
         {
-          path: "/car/details",
+          path: "/car/detail",
           element: <DetailCar />
         },
         {
