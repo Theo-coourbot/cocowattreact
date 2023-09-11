@@ -1,10 +1,13 @@
 
 import { Link, NavLink, Outlet } from "react-router-dom";
 import "../css/nav.css"
+import { isUserLoggedIn, logout } from "../services/AuthService";
 
 
 
 function NavBar(){
+
+ 
 return (
   <>
   
@@ -21,9 +24,16 @@ return (
         <Link class="nav-link fs-4" to={`/`}>Rechercher</Link>
         <Link class="nav-link fs-4 " to={`/trip/create`} >Publier un trajet</Link>
          
-
-        <Link class="nav-link fs-4 " to={`/connexion`}>sign In</Link>
+        {isUserLoggedIn ? 
+        <>
+         <Link class="nav-link fs-4 " to={`/connexion`}>sign In</Link>
         <Link class="nav-link fs-4  " to={`/inscription`} >sign Up</Link> 
+        
+        </>
+       
+        
+         : <button className="btn btn-outline-danger" onClick={logout}>logout</button>}
+        
          
       </div>
     </div>

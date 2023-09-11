@@ -4,6 +4,7 @@ import Input from "../../componant/Input"
 import "../../css/home.css"
 import NavBar from "../../componant/NavBar"
 import { useState } from "react"
+import { loginAPICall } from "../../services/AuthService"
 
 
 const SignIn = () => {
@@ -16,6 +17,7 @@ const SignIn = () => {
   
     const user = {mail,password}
     console.log(user);
+    loginAPICall(mail,password);
 
     e.preventDefault()
   }

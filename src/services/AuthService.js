@@ -1,5 +1,6 @@
+import axios from "axios"
 
-const AUTH_REST_API_BASE_URL = import.meta.env.VITE_HOST_API_ADDRESS+"/user"
+const AUTH_REST_API_BASE_URL = "http://localhost:8081/user"
 
 export const registerAPICall = (user) => axios.post(AUTH_REST_API_BASE_URL + '/register', user);
 

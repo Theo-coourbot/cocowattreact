@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom"
 import "../css/componant/card-detail-componant.css"
 
 function CardDetails(props){
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
 
@@ -235,48 +235,48 @@ function CardDetails(props){
     )
         
    }
-   else if(props.mode === "addComment") {
-    return ( 
+//    else if(props.mode === "addComment") {
+//     return ( 
         
-        <>
+//         <>
         
-        <div className="container bg-light rounded mt-5 p-3">
+//         <div className="container bg-light rounded mt-5 p-3">
             
-                 <div className="row mb-4">
-                     <div className="col">
-                         <h2>{props.name}</h2>
-                         <p>{props.age} ans</p>
-                         <div className="d-flex">
-                             <div className="star-img"></div>
-                             <p>{props.averageNote}/5</p>
-                             <p>{props.countNote} avis</p>
-                         </div>
-                     </div>
-                     <div className="col">
-                         <div className="d-flex justify-content-end">
+//                  <div className="row mb-4">
+//                      <div className="col">
+//                          <h2>{props.name}</h2>
+//                          <p>{props.age} ans</p>
+//                          <div className="d-flex">
+//                              <div className="star-img"></div>
+//                              <p>{props.averageNote}/5</p>
+//                              <p>{props.countNote} avis</p>
+//                          </div>
+//                      </div>
+//                      <div className="col">
+//                          <div className="d-flex justify-content-end">
  
-                         <div className="img-profile"></div>
-                         </div>
-                     </div>
-                 </div>
+//                          <div className="img-profile"></div>
+//                          </div>
+//                      </div>
+//                  </div>
  
-                <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea">Ajouter un commentaire</label>
-                    <button class="btn btn-primary" type="submit"> valider</button>
-                </div>
+//                 <div class="form-floating">
+//                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+//                     <label for="floatingTextarea">Ajouter un commentaire</label>
+//                     <button class="btn btn-primary" type="submit"> valider</button>
+//                 </div>
  
-                 </div>
+//                  </div>
  
                 
  
        
        
  
-         </>
-    )
+//          </>
+//     )
         
-   }
+//    }
    
     }
     

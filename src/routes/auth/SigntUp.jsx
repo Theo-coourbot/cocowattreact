@@ -1,6 +1,7 @@
 import "../../css/home.css"
 import NavBar from "../../componant/NavBar"
 import { useState } from "react"
+import { registerAPICall } from "../../services/AuthService"
 
 
 const SignUp = () => {
@@ -18,6 +19,7 @@ const SignUp = () => {
     const user = {lastName, firstName,phone, email, password}
 
     console.log(user);
+    registerAPICall(user)
 
     
 }
