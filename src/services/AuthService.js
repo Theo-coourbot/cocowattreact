@@ -1,8 +1,17 @@
 import axios from "axios"
 
-const AUTH_REST_API_BASE_URL = "http://localhost:8081/user"
+const AUTH_REST_API_BASE_URL = "http://localhost:8081/api/user"
 
-export const registerAPICall = (user) => axios.post(AUTH_REST_API_BASE_URL + '/register', user);
+export const registerAPICall = (firstName,lastName,phone,email,password,isAdmin,imageUrl) => axios.get(AUTH_REST_API_BASE_URL, {params : {
+    firstName: firstName,
+    lastName: lastName,
+    phone: phone,
+    email: email,
+    password: password,
+    isAdmin: isAdmin,
+    imageUrl:imageUrl
+
+}});
 
 export const loginAPICall = (email, password) => axios.post(AUTH_REST_API_BASE_URL + '/login', { email, password});
 

@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 import NavBar from "../../componant/NavBar"
+import { createCar } from "../../services/CarService"
 
 
 
@@ -19,6 +20,13 @@ const FormAddCar = () => {
     const car = {brand, modele,avalidePlace, isElectric}
 
     console.log(car);
+
+    createCar(brand, modele ,avalidePlace, isElectric).then((response) => {
+      
+      console.log(response.data);
+  }).catch(error => {
+      console.error(error);
+  })
 
     
 }

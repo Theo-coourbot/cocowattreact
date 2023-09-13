@@ -1,6 +1,6 @@
 
 import NavBar from "../../componant/NavBar"
-import "../../css/home.css"
+import "../../css/route/home.css"
 import CardDetails from "../../componant/Card-details"
 
 

@@ -1,5 +1,5 @@
 import { redirect, useNavigate } from "react-router-dom";
-import "../css/componant-input-search.css"
+import "../css/componant/componant-input-search.css"
 import {  useState } from "react";
 import ResultTrip from "../routes/trip/ResultSearchTrip";
 

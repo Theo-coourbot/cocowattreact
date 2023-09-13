@@ -1,4 +1,4 @@
-import "../css/error.css"
+import "../css/route/error.css"
 import { useRouteError } from "react-router-dom"
 
 

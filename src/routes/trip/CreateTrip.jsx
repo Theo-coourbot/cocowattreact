@@ -1,6 +1,6 @@
 
 
-import "../../css/home.css"
+import "../../css/route/home.css"
 import "../../css/route/create-trip.css"
 
 import NavBar from "../../componant/NavBar"

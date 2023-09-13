@@ -1,15 +1,15 @@
-import "../css/btn-componant.css"
+// import "../css/btn-componant.css"
 
 
 
-function BtnForm(props){
-return (
+// function BtnForm(props){
+// return (
 
 
-    <button class="btn btn-primary" type="submit">{props.name}</button>
+//     <button class="btn btn-primary" type="submit">{props.name}</button>
 
 
  
-);
-}
-export default BtnForm
+// );
+// }
+// export default BtnForm

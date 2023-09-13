@@ -13,6 +13,7 @@ import FormAddCar from "./routes/car/Form-add-car"
 import DetailCar from "./routes/car/Detail-car"
 import ShowComment from "./routes/comment/Show-comment"
 import AddComment from "./routes/comment/Add-comment"
+import { ProtectedRoute } from "./routes/protectedRoute"
 
 
 

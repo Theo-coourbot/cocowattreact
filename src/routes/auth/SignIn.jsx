@@ -1,9 +1,9 @@
 
 import BtnForm from "../../componant/BtnForm"
 import Input from "../../componant/Input"
-import "../../css/home.css"
+import "../../css/route/home.css"
 import NavBar from "../../componant/NavBar"
-import { useState } from "react"
+import {  useState } from "react"
 import { loginAPICall } from "../../services/AuthService"
 
 
@@ -11,6 +11,7 @@ const SignIn = () => {
 
  
   const [mail,setMail] = useState("")
+
   const [password,setPassword] = useState("")
 
   const handleconnectForm = (e) => {

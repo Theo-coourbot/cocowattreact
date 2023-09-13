@@ -2,7 +2,7 @@
 import Card from "../../componant/Card"
 
 import NavBar from "../../componant/NavBar"
-import "../../css/home.css"
+import "../../css/route/home.css"
 
 
 const ResultTrip = (props) => {

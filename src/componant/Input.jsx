@@ -1,4 +1,4 @@
-import "../css/input-componant.css"
+import "../css/componant/input-componant.css"
 
 
 

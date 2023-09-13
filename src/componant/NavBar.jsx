@@ -1,6 +1,6 @@
 
 import { Link, NavLink, Outlet } from "react-router-dom";
-import "../css/nav.css"
+import "../css/componant/nav.css"
 import { isUserLoggedIn, logout } from "../services/AuthService";
 
 

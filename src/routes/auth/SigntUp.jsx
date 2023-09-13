@@ -1,4 +1,4 @@
-import "../../css/home.css"
+import "../../css/route/home.css"
 import NavBar from "../../componant/NavBar"
 import { useState } from "react"
 import { registerAPICall } from "../../services/AuthService"
@@ -11,15 +11,23 @@ const SignUp = () => {
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const imageUrl = "../../assets/profile-removebg-preview.png"
 
   function handleRegisterForm(e){
 
     e.preventDefault();
 
-    const user = {lastName, firstName,phone, email, password}
+    const isAdmin = false
+    const user = {firstName, lastName ,phone, email, password ,isAdmin, imageUrl}
 
-    console.log(user);
-    registerAPICall(user)
+    // console.log(user);
+    // registerAPICall(firstName, lastName ,phone, email, password ,isAdmin, imageUrl)
+
+    registerAPICall(firstName, lastName ,phone, email, password ,isAdmin, imageUrl).then((response) => {
+      console.log(response.data);
+  }).catch(error => {
+      console.error(error);
+  })
 
     
 }
