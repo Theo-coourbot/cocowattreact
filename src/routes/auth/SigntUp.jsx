@@ -2,11 +2,13 @@ import "../../css/route/home.css"
 import NavBar from "../../componant/NavBar"
 import { useState } from "react"
 import { registerAPICall } from "../../services/AuthService"
+import { useNavigate } from "react-router-dom"
 
 
 const SignUp = () => {
 
   const [firstName, setFirstName] = useState('')
+  const navigate = useNavigate('');
   const [lastName, setLastName] = useState('')
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
@@ -18,13 +20,16 @@ const SignUp = () => {
     e.preventDefault();
 
     const isAdmin = false
-    const user = {firstName, lastName ,phone, email, password ,isAdmin, imageUrl}
+    const registerObj = {firstName, lastName ,phone, email, password ,isAdmin, imageUrl}
 
-    // console.log(user);
+    // console.log(registerObj);
     // registerAPICall(firstName, lastName ,phone, email, password ,isAdmin, imageUrl)
 
-    registerAPICall(firstName, lastName ,phone, email, password ,isAdmin, imageUrl).then((response) => {
+    // registerAPICall(firstName, lastName ,phone, email, password ,isAdmin, imageUrl).then((response) => {
+      
+    registerAPICall(registerObj).then((response) => {
       console.log(response.data);
+      navigate('/connexion')
   }).catch(error => {
       console.error(error);
   })

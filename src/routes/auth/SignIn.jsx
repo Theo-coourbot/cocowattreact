@@ -4,23 +4,39 @@ import Input from "../../componant/Input"
 import "../../css/route/home.css"
 import NavBar from "../../componant/NavBar"
 import {  useState } from "react"
-import { loginAPICall } from "../../services/AuthService"
+import { loginAPICall, saveLoggedInUser, storeToken } from "../../services/AuthService"
+import { useNavigate } from "react-router-dom"
 
 
 const SignIn = () => {
 
  
   const [mail,setMail] = useState("")
+  const navigate = useNavigate('')
 
   const [password,setPassword] = useState("")
 
-  const handleconnectForm = (e) => {
+  async function handleconnectForm (e)  {
   
-    const user = {mail,password}
-    console.log(user);
-    loginAPICall(mail,password);
-
     e.preventDefault()
+
+    const loginObj = {mail,password}
+    console.log(loginObj);
+    await loginAPICall(mail ,password).then((response) => {
+      console.log(response.data);
+
+      const token = 'Bearer ' + response.data.accessToken;
+      storeToken(token);
+
+      saveLoggedInUser(mail);
+      navigate("/profil/detail")
+
+      window.location.reload(false);
+  }).catch(error => {
+      console.error(error);
+  })
+    
+
   }
  
 
@@ -36,7 +52,7 @@ const SignIn = () => {
 
       <form className="mt-5" onSubmit={(e)=>handleconnectForm(e)}>
   <div class="mb-5 ">
-  <input type="email" className="form-control mt-2" id="input"  placeholder="Mot de passe"
+  <input type="email" className="form-control mt-2" id="input"  placeholder="email"
   value={mail} onChange={(e)=> setMail(e.target.value)} />
   </div>
   <div class="mb-5">

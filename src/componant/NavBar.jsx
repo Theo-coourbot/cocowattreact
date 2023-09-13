@@ -1,11 +1,23 @@
 
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import "../css/componant/nav.css"
-import { isUserLoggedIn, logout } from "../services/AuthService";
+import { getLoggedInUser, isUserLoggedIn, logout } from "../services/AuthService";
 
 
 
 function NavBar(){
+
+  const isLogged = isUserLoggedIn();
+  const navigate = useNavigate();
+  const emailLogged = getLoggedInUser();
+  // console.log(emailLogged);
+
+  const deconexion = () => {
+
+    navigate("/")
+    logout();
+
+  }
 
  
 return (
@@ -24,15 +36,15 @@ return (
         <Link class="nav-link fs-4" to={`/`}>Rechercher</Link>
         <Link class="nav-link fs-4 " to={`/trip/create`} >Publier un trajet</Link>
          
-        {isUserLoggedIn ? 
+        {isLogged == false ? 
         <>
-         <Link class="nav-link fs-4 " to={`/connexion`}>sign In</Link>
-        <Link class="nav-link fs-4  " to={`/inscription`} >sign Up</Link> 
+         <Link class="nav-link fs-4 " to={`/connexion`}>Se connecter</Link>
+        <Link class="nav-link fs-4  " to={`/inscription`} >S'inscrire</Link> 
         
         </>
        
         
-         : <button className="btn btn-outline-danger" onClick={logout}>logout</button>}
+         : <button className="btn btn-outline-success" onClick={deconexion}>Deconnexion</button>}
         
          
       </div>

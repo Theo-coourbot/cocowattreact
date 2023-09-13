@@ -1,14 +1,33 @@
 import { Link, useNavigate } from "react-router-dom"
 import "../css/componant/card-detail-componant.css"
+import { getLoggedInUser } from "../services/AuthService";
+import { findByEmailCallApi } from "../services/UserService";
+import { useState } from "react";
 
 function CardDetails(props){
     // const navigate = useNavigate();
+    const navigate = useNavigate()
+    const [user , setUser] = useState()
+    
+    
+    
+    
+    if(props.mode === "profile")
+    {
+    const emailLogged = getLoggedInUser();
+    console.log(emailLogged);
+    findByEmailCallApi(emailLogged).then ((response) =>{
+        console.log(response.data);
+        setUser(response.data);
+        
+    }).catch (error => {
+        console.error(error);
 
+    })
 
+    
+    
 
-
-   if(props.mode === "profile")
-   {
     return (
         <>
         
@@ -16,8 +35,8 @@ function CardDetails(props){
             
                  <div className="row mb-4">
                      <div className="col">
-                         <h2>theo</h2>
-                         <p>22 ans</p>
+                         <h2>oki</h2>
+                         <p>dokians</p>
                          <div className="d-flex">
                              <div className="star-img"></div>
                              <p>pas d'avis</p>
@@ -33,8 +52,8 @@ function CardDetails(props){
  
                  <div className="row mb-4">
                      <div className="coll">
-                         <p>06 26 ...</p>
-                         <p>c.c@gmail.com</p>
+                         <p>xx</p>
+                         <p>ss</p>
                          <p>10 trajets efectuee</p>
                      </div>
                      
@@ -45,17 +64,17 @@ function CardDetails(props){
                      <div className="col">
                          <div className="mb-3">
  
-                     <Link class="btn btn-primary" to={"/profil/comment"}  type="submit">voir mes avis</Link>
+                     <Link className="btn btn-primary" to={"/profil/comment"}  type="submit">voir mes avis</Link>
                          </div>
-                     <Link class="btn btn-primary" to={"/trip/result"} type="submit">voir mes trajets</Link>
+                     <Link className="btn btn-primary" to={"/trip/result"} type="submit">voir mes trajets</Link>
  
                      </div>
                      <div className="col">
                          <div className="mb-3 d-flex justify-content-end">
-                             <Link class="btn btn-primary" to={"/inscription"} type="submit">modifier profile</Link>
+                             <Link className="btn btn-primary" to={"/inscription"} type="submit">modifier profile</Link>
                          </div>
                          <div className="d-flex justify-content-end">
-                             <Link class="btn btn-primary" to={"/car/detail"} type="submit">info voiture</Link>
+                             <Link className="btn btn-primary" to={"/car/detail"} type="submit">info voiture</Link>
                          </div>
  
                      </div>
@@ -185,11 +204,11 @@ function CardDetails(props){
                  <div className="row">
                     <div className="col">
                         <div className="mb-4">
-                            <Link class="btn btn-primary" type="submit" to={"/car/add"}>Changer de véhicule</Link>
+                            <Link className="btn btn-primary" type="submit" to={"/car/add"}>Changer de véhicule</Link>
                         </div>
                         <div className="mb-4">
 
-                            <button class="btn btn-primary" type="submit">retirer le véhicule</button>
+                            <button className="btn btn-primary" type="submit">retirer le véhicule</button>
                         </div>
 
                     </div>
