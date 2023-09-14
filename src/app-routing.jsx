@@ -7,13 +7,14 @@ import SignIn from "./routes/auth/SignIn"
 import SignUp from "./routes/auth/SigntUp"
 import CreateTrip from "./routes/trip/CreateTrip"
 import Home from "./routes/Home"
-import ProfileDetails from "./routes/profile-details"
+import ProfileDetails from "./routes/user/profile-details"
 import DetailsTrip from "./routes/trip/Detail-trip"
 import FormAddCar from "./routes/car/Form-add-car"
 import DetailCar from "./routes/car/Detail-car"
 import ShowComment from "./routes/comment/Show-comment"
 import AddComment from "./routes/comment/Add-comment"
 import { ProtectedRoute } from "./routes/protectedRoute"
+import updateProfil from "./routes/user/Update"
 
 
 
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
         {
           path: "/trip/create",
-          element: <CreateTrip />
+          element: <ProtectedRoute><CreateTrip /></ProtectedRoute>
         },
         {
           path: "/trip/result",
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/trip/detail",
-          element: <DetailsTrip />
+          element: <ProtectedRoute><DetailsTrip /></ProtectedRoute>
         },
         {
           path: "/profil/detail",
@@ -56,19 +57,23 @@ const router = createBrowserRouter([
         },
         {
           path: "/car/add",
-          element: <FormAddCar />
+          element: <ProtectedRoute><FormAddCar /></ProtectedRoute>
         },
         {
           path: "/car/detail",
-          element: <DetailCar />
+          element: <ProtectedRoute><DetailCar /></ProtectedRoute>
         },
         {
           path: "/profil/comment",
-          element: <ShowComment />
+          element: <ProtectedRoute><ShowComment /></ProtectedRoute>
         },
         {
           path: "/profil/comment/add",
-          element: <AddComment />
+          element: <ProtectedRoute><AddComment /></ProtectedRoute>
+        },
+        {
+          path: "/profil/update",
+          element: <ProtectedRoute> <updateProfil/></ProtectedRoute>
         },
         
        

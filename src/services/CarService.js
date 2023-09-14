@@ -12,4 +12,4 @@ export const createCar = (brand,model,availableSeats,isElectric) => axios.get(CA
 }});
 
 export const getCar = (id) => axios.get(CAR_REST_API_BASE_URL + '/id/'  + id)
-export const deleteCar = (id) => axios.delete(CAR_REST_API_BASE_URL + '/'  + id)
+export const deleteCarCallApi = (id) => axios.delete(CAR_REST_API_BASE_URL + '/'  + id)

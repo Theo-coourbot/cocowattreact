@@ -5,22 +5,45 @@ import "../../css/route/create-trip.css"
 
 import NavBar from "../../componant/NavBar"
 import { useState } from "react"
+import { AddTripToUserCallApi, createTripCallTrip } from "../../services/TripService"
 
 
 const CreateTrip = () => {
 
   const [startingPoint, setStartingPoint] = useState('')
   const [endPoint, setEndPoint] = useState('')
-  const [avalidePlace, setAvalidePlace] = useState('')
+  const [availableSeats, setavailableSeats] = useState('')
   const [distance, setDistance] = useState('')
-  const [startingTrip, setStartingTrip] = useState('')
+  const [localDate, setLocalDate] = useState('')
+  const [user, setUser] = useState('')
 
 
   function handleTripCreateForm(e){
 
     e.preventDefault();
+    const emailLogged = getLoggedInUser();
+    findByEmailCallApi(emailLogged).then((response) =>{
 
-    const trip = {startingPoint, endPoint,avalidePlace, distance,startingTrip}
+      console.log(response.data);
+      setUser(response.data);
+      
+  }).catch (error => {
+      console.error(error);
+
+  })
+  console.log(user);    
+    const userId = user.id;
+
+
+
+    const trip = {startingPoint, endPoint,localDate,availableSeats,distance,userId}
+    // recuperation de l'id trip a faire 
+    createTripCallTrip(startingPoint, endPoint,localDate,availableSeats,distance,userId).then((response) => {
+      AddTripToUserCallApi(userId,)
+      console.log(response.data);
+  }).catch(error => {
+      console.error(error);
+  })
 
     console.log(trip);
 
@@ -54,7 +77,7 @@ value={endPoint} onChange={(e)=> setEndPoint(e.target.value)}></input>
 </div>
 <div class="mb-5">
 <input type="number" className="form-control mt-2" id="input"  placeholder="place(s) à disposition"
-value={avalidePlace} onChange={(e)=> setAvalidePlace(e.target.value)}></input>
+value={availableSeats} onChange={(e)=> setavailableSeats(e.target.value)}></input>
 </div>
 <div class="mb-5">
 <input type="number" className="form-control mt-2" id="input"  placeholder="Distance total"
@@ -62,7 +85,7 @@ value={distance} onChange={(e)=> setDistance(e.target.value)}></input>
 </div>
 <div class="mb-5">
 <input type="date" className="form-control mt-2" id="input"  placeholder="Distance total"
-value={startingTrip} onChange={(e)=> setStartingTrip(e.target.value)}></input>
+value={localDate} onChange={(e)=> setLocalDate(e.target.value)}></input>
 </div>
 
 

@@ -25,6 +25,7 @@ export const saveLoggedInUser = (email) => sessionStorage.setItem("authenticated
 
 export const isUserLoggedIn = () => {
 
+    
     const email = sessionStorage.getItem("authenticatedUser");
 
     if(email == null) {

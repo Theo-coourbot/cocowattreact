@@ -23,9 +23,10 @@ const SignIn = () => {
     const loginObj = {mail,password}
     console.log(loginObj);
     await loginAPICall(mail ,password).then((response) => {
-      console.log(response.data);
+      console.log("data " + response.data.token);
 
-      const token = 'Bearer ' + response.data.accessToken;
+      const token = 'Bearer ' + response.data.token;
+      console.log("token " + token)
       storeToken(token);
 
       saveLoggedInUser(mail);
@@ -33,7 +34,7 @@ const SignIn = () => {
 
       window.location.reload(false);
   }).catch(error => {
-      console.error(error);
+      console.error("error" + error);
   })
     
 

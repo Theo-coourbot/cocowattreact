@@ -1,13 +1,19 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import "../css/componant/card-detail-componant.css"
 import { getLoggedInUser } from "../services/AuthService";
 import { findByEmailCallApi } from "../services/UserService";
 import { useState } from "react";
+import { deleteCarCallApi } from "../services/CarService";
+import { getTripById } from "../services/TripService";
 
 function CardDetails(props){
     // const navigate = useNavigate();
     const navigate = useNavigate()
     const [user , setUser] = useState()
+    const [car,setCar] =useState();
+    const {id} = useParams();
+    const {trip,setTrip} = useState();
+
     
     
     
@@ -16,7 +22,9 @@ function CardDetails(props){
     {
     const emailLogged = getLoggedInUser();
     console.log(emailLogged);
-    findByEmailCallApi(emailLogged).then ((response) =>{
+
+    findByEmailCallApi(emailLogged).then((response) =>{
+
         console.log(response.data);
         setUser(response.data);
         
@@ -24,6 +32,7 @@ function CardDetails(props){
         console.error(error);
 
     })
+    console.log(user);              
 
     
     
@@ -35,11 +44,11 @@ function CardDetails(props){
             
                  <div className="row mb-4">
                      <div className="col">
-                         <h2>oki</h2>
-                         <p>dokians</p>
+                         <h2>Theo</h2>
+                         <p>22ans</p>
                          <div className="d-flex">
                              <div className="star-img"></div>
-                             <p>pas d'avis</p>
+                             <p className="ms-1 mt-2">  pas d'avis</p>
                          </div>
                      </div>
                      <div className="col">
@@ -52,8 +61,8 @@ function CardDetails(props){
  
                  <div className="row mb-4">
                      <div className="coll">
-                         <p>xx</p>
-                         <p>ss</p>
+                         <p>0628282828</p>
+                         <p>theo.courbot@coucou.fr</p>
                          <p>10 trajets efectuee</p>
                      </div>
                      
@@ -71,7 +80,7 @@ function CardDetails(props){
                      </div>
                      <div className="col">
                          <div className="mb-3 d-flex justify-content-end">
-                             <Link className="btn btn-primary" to={"/inscription"} type="submit">modifier profile</Link>
+                             <Link className="btn btn-primary" to={"/profil/update"} type="submit">modifier profile</Link>
                          </div>
                          <div className="d-flex justify-content-end">
                              <Link className="btn btn-primary" to={"/car/detail"} type="submit">info voiture</Link>
@@ -89,6 +98,22 @@ function CardDetails(props){
  
    } else if(props.mode === "trip")
    {
+    
+    getTripById(id).then((response) =>{
+
+        console.log(response.data);
+        setTrip(response.data);
+        
+    }).catch (error => {
+        console.error(error);
+
+    })
+
+
+
+    
+
+
     return (
         <>
         
@@ -174,7 +199,14 @@ function CardDetails(props){
          </>
     )
    } else if(props.mode === "car") {
+       const car = user.car
+
+       const deletCar = () => {
+        deleteCarCallApi(car.id)
+
+       }
     return (
+
         <>
         
         <div className="container bg-light rounded mt-5 p-3">
@@ -208,7 +240,7 @@ function CardDetails(props){
                         </div>
                         <div className="mb-4">
 
-                            <button className="btn btn-primary" type="submit">retirer le véhicule</button>
+                            <button className="btn btn-primary" onClick={deletCar} type="submit">retirer le véhicule</button>
                         </div>
 
                     </div>

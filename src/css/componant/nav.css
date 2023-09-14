@@ -14,4 +14,16 @@
     
     background-size: contain;
 }
+.profil-img{
+    display: flex;
+    
+    background-image: url("../../assets/profile-removebg-preview.png") ;
+    background-repeat: no-repeat;
+    height:7vh;
+    width: 7vw;
+  
+    
+    
+    background-size: contain;
+}
 

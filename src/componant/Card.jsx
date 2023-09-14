@@ -11,6 +11,8 @@ function Card(props){
         navigate("/trip/detail")
     
     } 
+
+    
 return (
 
 //    <Link to={"/trip/detail"} className="text-decoration-none">

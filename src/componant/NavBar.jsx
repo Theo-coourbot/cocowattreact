@@ -9,7 +9,7 @@ function NavBar(){
 
   const isLogged = isUserLoggedIn();
   const navigate = useNavigate();
-  const emailLogged = getLoggedInUser();
+  // const emailLogged = getLoggedInUser();
   // console.log(emailLogged);
 
   const deconexion = () => {
@@ -18,14 +18,26 @@ function NavBar(){
     logout();
 
   }
+  const myProfile = () => {
+
+    navigate("/profil/detail")
+   
+
+  }
 
  
 return (
   <>
   
 <nav class="navbar navbar-expand-lg " id="nav-container">
+  
   <div class="container-fluid">
-    <div className="logo-img"></div>
+    {isLogged == false ? 
+      <div className="logo-img"></div>
+      :
+      <div className="profil-img" onClick={myProfile}></div>
+
+    }
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
